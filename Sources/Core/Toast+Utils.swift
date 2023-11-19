@@ -50,7 +50,8 @@ extension Image: ToastCompatible { }
 
 public extension DS where Item == Image {
     static var `default`: Image {
-        Image(systemName: "checkmark")
+        Image(systemName: "checkmark.circle")
+        
     }
 }
 

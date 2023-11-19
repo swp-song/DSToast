@@ -30,7 +30,7 @@ extension ToastView {
     /// Display Image
     var image: some View {
         model.image
-            .font(.headline)
+            .font(.title)
             .font(.body)
     }
     
