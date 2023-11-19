@@ -2,13 +2,8 @@
   "colors" : [
     {
       "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0x10",
-          "green" : "0x10",
-          "red" : "0x10"
-        }
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
       },
       "idiom" : "universal"
     },
@@ -20,12 +15,30 @@
         }
       ],
       "color" : {
-        "platform" : "ios",
-        "reference" : "darkTextColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0x10",
+          "green" : "0x10",
+          "red" : "0x10"
+        }
       },
       "idiom" : "universal"
     },
     {
+      "color" : {
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
+      },
+      "idiom" : "iphone"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "color" : {
         "color-space" : "srgb",
         "components" : {
@@ -38,19 +51,19 @@
       "idiom" : "iphone"
     },
     {
+      "color" : {
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
+      },
+      "idiom" : "ipad"
+    },
+    {
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
       ],
-      "color" : {
-        "platform" : "ios",
-        "reference" : "darkTextColor"
-      },
-      "idiom" : "iphone"
-    },
-    {
       "color" : {
         "color-space" : "srgb",
         "components" : {
@@ -63,27 +76,9 @@
       "idiom" : "ipad"
     },
     {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
       "color" : {
-        "platform" : "ios",
-        "reference" : "darkTextColor"
-      },
-      "idiom" : "ipad"
-    },
-    {
-      "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0x10",
-          "green" : "0x10",
-          "red" : "0x10"
-        }
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
       },
       "idiom" : "mac"
     },
@@ -107,20 +102,20 @@
     },
     {
       "color" : {
-        "platform" : "ios",
-        "reference" : "darkTextColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0x10",
+          "green" : "0x10",
+          "red" : "0x10"
+        }
       },
       "idiom" : "watch"
     },
     {
       "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0x10",
-          "green" : "0x10",
-          "red" : "0x10"
-        }
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
       },
       "idiom" : "tv"
     },
@@ -132,8 +127,13 @@
         }
       ],
       "color" : {
-        "platform" : "ios",
-        "reference" : "darkTextColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0x10",
+          "green" : "0x10",
+          "red" : "0x10"
+        }
       },
       "idiom" : "tv"
     }
