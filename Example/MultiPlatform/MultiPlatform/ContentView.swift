@@ -13,12 +13,10 @@ struct ContentView: View {
     
     @State private var showTopToast = false
     
-    @ObservedObject var `default` = DSToast.Data(title: "`Default`",  message: "`Message Top`")
-    
-    @ObservedObject var top = DSToast.Data(title: "Title",  message: "Message Top", config: DSToast.Config(isAutoHidden: false), blur: DSToast.Blur.default)
-    @ObservedObject var bottom = DSToast.Data(model: DSToast.Molde(title: "Title", message: "Bottom Message", textAlignment: .center, alignment: .vertical), position: .bottom)
-    
-    @ObservedObject var center = DSToast.Data(model: DSToast.Molde(title: "Title", message: "Center Message", alignment: .vertical), position: .center)
+    @ObservedObject var `default` = DSToast.Data(title: "`Default`",  message: "`Default Message`")
+    @ObservedObject var top = DSToast.Data(title: "`Top`",  message: "`Message Top`", config: DSToast.Config(isAutoHidden: false), blur: DSToast.Blur.default)
+    @ObservedObject var center = DSToast.Data(model: DSToast.Molde(title: "`Center`", message: "`Center Message`", alignment: .vertical), position: .center)
+    @ObservedObject var bottom = DSToast.Data(model: DSToast.Molde(title: "`Bottom`", message: "`Bottom Message`", textAlignment: .center, alignment: .vertical), position: .bottom)
     
     var body: some View {
         HStack (spacing: 30) {
@@ -28,25 +26,23 @@ struct ContentView: View {
                 }
             }
             
-            Button("top") {
+            Button("`top`") {
                 withAnimation {
                     self.top.config.isHidden = false
                 }
             }
             
-            Button("center") {
+            Button("`center`") {
                 withAnimation {
                     self.center.config.isHidden = false
                 }
             }
             
-            Button("bottom") {
+            Button("`bottom`") {
                 withAnimation {
                     self.bottom.config.isHidden = false
                 }
             }
-            
-            
         }
         .padding()
         .dsToast(self.default)

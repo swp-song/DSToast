@@ -43,7 +43,7 @@ public struct DSToast: View {
         
             #if os(macOS)
             ToastView(model: data.model)
-                .background(data.backgroundColor.opacity(0.4))
+                .background(data.backgroundColor.opacity(0.6))
                 .background(.ultraThinMaterial)
                 .cornerRadius(10)
             #else
