@@ -49,6 +49,8 @@ struct DSToastModifier<T>: ViewModifier where T: View {
                     
                 }
             }
+            .opacity(self.isHidden ? 0 : 1.0)
+            .transition(.opacity)
         }
     }
    
