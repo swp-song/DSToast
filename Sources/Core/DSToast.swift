@@ -62,9 +62,7 @@ public struct DSToast: View {
         .transition(.opacity)
         .onAppear {
             if self.data.config.isAutoHidden {
-                self.data.config.cancellable = ds.delay(self.data.config.delay) {
-                    withAnimation { self.data.config.isHidden = true }
-                }
+                self.data.config.cancellable = ds.hidden(self.data)
             }
         }
         .onDisappear {
@@ -75,10 +73,57 @@ public struct DSToast: View {
         }
         .onTapGesture {
             if (self.data.config.isTapGesture) {
-                withAnimation { self.data.config.isHidden = true }
+                ds.hidden(self.data, isDelay: false)
             }
-            
         }
         
     }
+}
+
+
+extension DSToast: ToastCompatible { }
+
+
+extension DS where Item == DSToast {
+    
+    /// `DSToast` animation display
+    /// - Parameter data: `DSToast.Data`
+    func display(_ data: DSToast.Data) {
+        withAnimation { data.config.isHidden = false }
+    }
+    
+    /// `DSToast` animation hidden
+    /// - Parameters:
+    ///   - data:       data
+    ///   - isDelay:    delay to hide
+    /// - Returns:      AnyCancellable
+    @discardableResult
+    func hidden(_ data: DSToast.Data, isDelay: Bool = true) -> AnyCancellable? {
+        
+        if isDelay {
+            return self.delay(data.config.delay) {
+                withAnimation { data.config.isHidden = true }
+            }
+        }
+        
+        withAnimation { data.config.isHidden = true }
+        return nil
+    }
+}
+
+
+public extension DS where Item == DSToast {
+        
+    /// `DSToast` animation display
+    /// - Parameter data: `DSToast.Data`
+    static func display(_ data: DSToast.Data) {
+        withAnimation { data.config.isHidden = false }
+    }
+    
+    /// `DSToast` animation hidden
+    /// - Parameter data: `DSToast.Data`
+    static func hidden(_ data: DSToast.Data) {
+        withAnimation { data.config.isHidden = true }
+    }
+    
 }

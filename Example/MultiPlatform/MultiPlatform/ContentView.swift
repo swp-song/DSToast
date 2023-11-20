@@ -21,27 +21,19 @@ struct ContentView: View {
     var body: some View {
         HStack (spacing: 30) {
             Button("`default`") {
-                withAnimation {
-                    self.default.config.isHidden = false
-                }
+                DSToast.ds.display(self.default)
             }
             
             Button("`top`") {
-                withAnimation {
-                    self.top.config.isHidden = false
-                }
+                DSToast.ds.display(self.top)
             }
             
             Button("`center`") {
-                withAnimation {
-                    self.center.config.isHidden = false
-                }
+                DSToast.ds.display(self.center)
             }
             
             Button("`bottom`") {
-                withAnimation {
-                    self.bottom.config.isHidden = false
-                }
+                DSToast.ds.display(self.bottom)
             }
         }
         .padding()
