@@ -1,16 +1,9 @@
 # DSToast
 ## DSToast
 
-
-
 * `DSToast` 是一个简单提示框， 支持，`MacOS`， `iPhone`，`iPad`.
 
-
-
 ----
-
-
-
 
 ## 安装 ( Installation ) 
 
@@ -28,25 +21,17 @@ dependencies: [
 ]
 ```
 
-
-
 ##### Gitee ( 国内 )
 
-````swift
 ```swift
 dependencies: [
     .package(url: "https://gitee.com/dream-swp/DSToast.git", .upToNextMajor(from: "1.1.0"))
 ]
-```
 ````
 
 ----
 
-
-
 ## 使用 ( Use )
-
-
 
 ```swift
 import DSToast
@@ -81,8 +66,6 @@ var body: some View {
 
 
 ```
-
-
 
 ----
 

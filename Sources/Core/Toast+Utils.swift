@@ -8,9 +8,6 @@ import Foundation
 import Combine
 import SwiftUI
 
-
-extension DSToast: ToastCompatible { }
-
 extension DS where Item == DSToast {
     
     /// Delayed implementation of tasks
@@ -20,6 +17,19 @@ extension DS where Item == DSToast {
     /// - Returns:  Cancellable tasks
     @discardableResult
     func delay(_ time: TimeInterval, task: @escaping ()->()) -> AnyCancellable {
+        Timer.publish(every: time, tolerance: 0.5, on: .main, in: .common)
+            .autoconnect()
+            .sink { _ in task() }
+    }
+    
+    
+    /// Delayed implementation of tasks
+    /// - Parameters:
+    ///   - time:   Time Delay
+    ///   - task:   Delayed tasks
+    /// - Returns:  Cancellable tasks
+    @discardableResult
+    static func delay(_ time: TimeInterval, task: @escaping ()->()) -> AnyCancellable {
         Timer.publish(every: time, tolerance: 0.5, on: .main, in: .common)
             .autoconnect()
             .sink { _ in task() }
